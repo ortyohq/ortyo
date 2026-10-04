@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#0d0f12" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f4f3f7" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script>
       (() => {
@@ -12,14 +12,12 @@
         const theme =
           stored === "light" || stored === "dark"
             ? stored
-            : matchMedia("(prefers-color-scheme: light)").matches
-              ? "light"
-              : "dark";
+            : "light";
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = theme;
         document.querySelector('meta[name="theme-color"]')?.setAttribute(
           "content",
-          theme === "dark" ? "#0d0f12" : "#f6f7f9",
+          theme === "dark" ? "#0d0f12" : "#f4f3f7",
         );
       })();
     </script>
